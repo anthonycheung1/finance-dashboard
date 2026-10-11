@@ -103,7 +103,7 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/finance-dashboard">
       <Navigation
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
