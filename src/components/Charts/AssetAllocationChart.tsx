@@ -84,7 +84,7 @@ function AssetAllocationChart(
             label
           >
 
-            {chartData.map((entry, index) => (
+            {chartData.map((_, index) => (
 
               <Cell
                 key={`cell-${index}`}

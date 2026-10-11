@@ -12,20 +12,14 @@ import type { NetWorthHistory } from '../../types/finance';
 
 import { formatCurrency } from '../../utils/formatters';
 
-
 type NetWorthChartProps = {
   history: NetWorthHistory[];
 };
 
-
 function NetWorthChart(props: NetWorthChartProps) {
-
   return (
-
     <ResponsiveContainer width="100%" height={400}>
-
       <LineChart data={props.history}>
-
         <CartesianGrid
           strokeDasharray="3 3"
           stroke="var(--border-color)"
@@ -59,16 +53,16 @@ function NetWorthChart(props: NetWorthChartProps) {
         />
 
         <Tooltip
-          labelFormatter={(value: string | number) =>
-            new Date(value).toLocaleDateString(
+          labelFormatter={(label) =>
+            new Date(String(label)).toLocaleDateString(
               'en-AU',
-              { 
+              {
                 month: 'long',
                 year: 'numeric'
               }
             )
           }
-          formatter={(value: number | string | undefined) =>
+          formatter={(value) =>
             formatCurrency(Number(value))
           }
         />
@@ -81,14 +75,9 @@ function NetWorthChart(props: NetWorthChartProps) {
           dot
           name="Net Worth"
         />
-
       </LineChart>
-
     </ResponsiveContainer>
-
   );
-
 }
-
 
 export default NetWorthChart;
